@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>SteamVR Hardware ID - SteamVR Documentation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "SteamVR Hardware ID";
+    var mkdocs_page_input_path = "hardware_id.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> SteamVR Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Design Guides</span></p>
+                <ul class="current">
+                    <li class="toctree-l1"><a class="reference internal" href="../steamvr_license_setup/">Get Access to the SteamVR HDK</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../valve_steamvr_documentation/">Valve's SteamVR Tracking Documentation</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../tracked_device_design_goals/">Design Goals</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../hmd_designer/">Valve's HMD Designer GUI</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../fusion360_json/">JSON generation in Fusion360</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../prototyping/">Physical Prototyping</a>
+                    </li>
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">SteamVR Hardware ID</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#aa-the-vendor-code">AA - The Vendor Code</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#bb-major-revision">BB - Major Revision</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#cc-minor-revision">CC - Minor Revision</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#dd-sensor-version">DD - Sensor Version</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#combining-bytes-to-form-a-complete-hwid">Combining Bytes to form a Complete HWID</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reading-the-hardware-id-from-a-steamvr-device">Reading the Hardware ID from a SteamVR Device</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#changing-the-hardware-id">Changing the Hardware ID</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#why-is-the-hardware-id-important">Why is the Hardware ID Important?</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">HDK Tutorials</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pairing_instructions/">Pairing your HDK</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../optical_calibration/">Optical Calibration</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../imu_calibration/">IMU Calibration</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">SteamVR Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Design Guides &raquo;</li>
+        
+      
+    
+    <li>SteamVR Hardware ID</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="steamvr-hardware-id-hwid">SteamVR Hardware ID (HWID)</h1>
+<p>Each SteamVR device is identified by its hardware id (HWID).  This is a 32bit number that is typically expressed in hexadecimal format.</p>
+<p>The hardware ID is broken down into </p>
+<p>0x AA BB CC DD</p>
+<h2 id="aa-the-vendor-code">AA - The Vendor Code</h2>
+<table>
+<thead>
+<tr>
+<th>Byte Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x F0 xx xx xx xx</td>
+<td>Tundra Labs Products</td>
+</tr>
+<tr>
+<td>0x 90 xx xx xx xx</td>
+<td>Generic HDK Designs - Typically supplied by Triad Semiconductor or Synapes</td>
+</tr>
+<tr>
+<td>0x 8x xx xx xx xx</td>
+<td>HTC Products</td>
+</tr>
+<tr>
+<td>0x 1x xx xx xx xx</td>
+<td>Valve Products</td>
+</tr>
+<tr>
+<td>0x 2x xx xx xx xx</td>
+<td>Valve Products</td>
+</tr>
+</tbody>
+</table>
+<h2 id="bb-major-revision">BB - Major Revision</h2>
+<p>These are typically specific to the Vendor, the relevant revisions are listed below:</p>
+<table>
+<thead>
+<tr>
+<th>Byte Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x 90 03 xx xx</td>
+<td>SteamVR HDK and Triad Shoto HDK</td>
+</tr>
+<tr>
+<td>0x F0 00 xx xx</td>
+<td>Tundra Labs TL448K6D-GP-HDK</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cc-minor-revision">CC - Minor Revision</h2>
+<p>The minor revision is also set by the vendor, in all current cases this value is set to 00</p>
+<h2 id="dd-sensor-version">DD - Sensor Version</h2>
+<p>The sensor </p>
+<table>
+<thead>
+<tr>
+<th>Byte Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x xx xx xx 00</td>
+<td>Gen 1 only: Discrete Optical Sensor (Used in Original Vive)</td>
+</tr>
+<tr>
+<td>0x xx xx xx 04</td>
+<td>Gen 1 only: Triad Semiconductor TS3633 (Used in Tracker Developer Edition)</td>
+</tr>
+<tr>
+<td>0x xx xx xx 06</td>
+<td>Gen 1 &amp; 2: Triad Semiconductor TS4231 (Used in Vive Pro, Gen 2 Tracker and Pro Controllers)</td>
+</tr>
+<tr>
+<td>0x xx xx xx 09</td>
+<td>Gen 1 &amp; 2: Triad Semiconductor TS4631 (Used in Valve Index and Index Controllers)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="combining-bytes-to-form-a-complete-hwid">Combining Bytes to form a Complete HWID</h2>
+<table>
+<thead>
+<tr>
+<th>Byte Value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0x 90 03 00 04</td>
+<td>Original HDK from Triad Semiconductor using TS3633</td>
+</tr>
+<tr>
+<td>0x 90 03 00 06</td>
+<td>Shoto HDK from Triad Semiconductor using TS4231</td>
+</tr>
+<tr>
+<td>0x 90 03 00 09</td>
+<td>Shoto HDK from Triad Semiconductor using TS4112</td>
+</tr>
+<tr>
+<td>0x F0 00 00 09</td>
+<td>TL448K6D-GP-HDK from Tundra Labs using TS4112</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reading-the-hardware-id-from-a-steamvr-device">Reading the Hardware ID from a SteamVR Device</h2>
+<p>The principle way to read the Hardware ID is when the device is in <code>Bootloader Mode</code>, to put the device into bootloader mode, connect it to a PC via USB and issue the following command:</p>
+<pre><code>lighthouse_watchman_update.exe -bw3
+</code></pre>
+
+<p>The device will disconnect from USB, jump to <code>Bootloader Mode</code> and then re-enumerate.  The device will notify the user that it is in <code>Bootloader Mode</code> with a rapidly flashing <code>Red LED</code>.</p>
+<p>Once in <code>Bootloader Mode</code>, the Hardware ID can be checked with the following command:</p>
+<pre><code>lighthouse_watchman_update.exe -aw3
+</code></pre>
+
+<p>The following is an example output of this command with the Hardware ID highlighted:</p>
+<p><img alt="image-20200330170528469" src="images/hardware_id.assets/image-20200330170528469.png" /></p>
+<h2 id="changing-the-hardware-id">Changing the Hardware ID</h2>
+<p>If you have determined that the Hardware ID is not correct, you may change it with the following command:</p>
+<pre><code>lighthouse_watchman_update.exe -Bw3 0xF0000009
+</code></pre>
+
+<p><code>Note</code> the device must be in <code>Bootloader Mode</code> in order to write in a new Hardware ID.  Refer to the section above for instructions on how to place the device into bootloader mode.</p>
+<p><code>Note</code> After the Hardware ID is written to a device, it will reboot and exit <code>Bootloader Mode</code></p>
+<h2 id="why-is-the-hardware-id-important">Why is the Hardware ID Important?</h2>
+<p>The SteamVR firmware is compiled into a universal binary that supports running on many different hardware targets.  The hardware id "tells" the firmware what hardware that it is running on an configures itself for that particular hardware.  In some cases, the device will not function with an incorrect hardware ID.</p>
+<p>Specific to Optical Sensors, each sensor also has tuned parameters to optimize it's performance in SteamVR.  In order to use the correct tuning values, the correct sensor must be identified.</p>
+<p>If an incorrect sensor is identified in the hardware id, it may still track but the performance could be erratic and unpredictable.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pairing_instructions/" class="btn btn-neutral float-right" title="Pairing your HDK">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../prototyping/" class="btn btn-neutral" title="Physical Prototyping"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../prototyping/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../pairing_instructions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
