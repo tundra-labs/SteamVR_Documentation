@@ -9,7 +9,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Pairing your HDK - SteamVR Documentation</title>
+  <title>Get Access to the SteamVR HDK - SteamVR Documentation</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
   <link rel="stylesheet" href="../css/theme.css" />
@@ -18,8 +18,8 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Pairing your HDK";
-    var mkdocs_page_input_path = "pairing_instructions.md";
+    var mkdocs_page_name = "Get Access to the SteamVR HDK";
+    var mkdocs_page_input_path = "steamvr_license_setup.md";
     var mkdocs_page_url = null;
   </script>
   
@@ -52,8 +52,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">Design Guides</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../steamvr_license_setup/">Get Access to the SteamVR HDK</a>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Get Access to the SteamVR HDK</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../valve_steamvr_documentation/">Valve's SteamVR Tracking Documentation</a>
                     </li>
@@ -67,10 +67,8 @@
                     </li>
                 </ul>
                 <p class="caption"><span class="caption-text">HDK Tutorials</span></p>
-                <ul class="current">
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Pairing your HDK</a>
-    <ul class="current">
-    </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../pairing_instructions/">Pairing your HDK</a>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../optical_calibration/">Optical Calibration</a>
                     </li>
@@ -98,11 +96,11 @@
     
       
         
-          <li>HDK Tutorials &raquo;</li>
+          <li>Design Guides &raquo;</li>
         
       
     
-    <li>Pairing your HDK</li>
+    <li>Get Access to the SteamVR HDK</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -113,18 +111,8 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="hdk-pairing-instructions">HDK Pairing Instructions</h1>
-<ol>
-<li>Connect the TL448K6D-GP-HDK to your PC via USB Cable</li>
-<li>Connect a SteamVR Dongle to the PC</li>
-<li>Open Two Lighthouse Console Instances:<img alt="LH_console.PNG" src="../images/pairing_instructions.assets/LH_console.png" /></li>
-<li>In the image above, you will see that two Lighthouse devices are available for connection, LHR-19294AB1 and 48590C3441.  Any serial number beginning with “LHR” is a Tracked object device, in this case it is the TL448K6D-GP-HDK.  Serial numbers that do not begin with LHR are typically dongles.  Normally when Lighthouse Console initializes, the first LHR device is connected to by default.</li>
-<li>In one of the two Lighthouse console windows, type the command “serial <your dongle SN>” to change the connection to the dongle.  In this example “serial 48590C3441” will be used:<img alt="LH_console2.PNG" src="../images/pairing_instructions.assets/LH_console2.png" /></li>
-<li>Now we can see that the left lighthouse console is connected to the LHR device and the right one is connected to the dongle.</li>
-<li>Type the command “pair” into both consoles<img alt="LH_console3.PNG" src="../images/pairing_instructions.assets/LH_console3.png" /></li>
-<li>when entering Pair on each device, they will both begin the pairing process.  When pairing occurs, the TL448K6D-GP-HDK will briefly connect to the  dongle over wireless and then reconnect via usb.  This is normal and signifies that the pairing process has completed successfully.</li>
-<li>At this point you may test the wireless connection by disconnecting the TL448K6D-GP-HDK from USB and powering on via battery power.  When you do this, the Left Lighthouse Console will disconnect and the right will establish a full wireless connection.  From this point forward, your TL448K6D-GP-HDK will connect to the dongle via wireless:<img alt="img" src="../images/pairing_instructions.assets/image-asset.png" /></li>
-</ol>
+                <p>Under construction, until this page is setup, please refer to:</p>
+<p>http://help.triadsemi.com/en/articles/836947-how-to-get-access-to-steamvr-hdk-in-steam</p>
               
             </div>
           </div>
@@ -132,10 +120,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../optical_calibration/" class="btn btn-neutral float-right" title="Optical Calibration">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../valve_steamvr_documentation/" class="btn btn-neutral float-right" title="Valve's SteamVR Tracking Documentation">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../prototyping/" class="btn btn-neutral" title="Physical Prototyping"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -161,10 +149,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../prototyping/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../optical_calibration/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../valve_steamvr_documentation/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
