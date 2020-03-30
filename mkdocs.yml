@@ -10,6 +10,7 @@ nav:
     - "Valve's HMD Designer GUI": 'hmd_designer.md'
     - "JSON generation in Fusion360": 'fusion360_json.md'
     - "Physical Prototyping": 'prototyping.md'
+    - "SteamVR Hardware ID": 'hardware_id.md'
   - 'HDK Tutorials':
     - 'Pairing your HDK': 'pairing_instructions.md'
     - 'Optical Calibration': 'optical_calibration.md'
