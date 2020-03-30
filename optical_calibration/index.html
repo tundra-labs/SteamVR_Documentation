@@ -56,6 +56,14 @@
                     <li class="toctree-l1"><a class="reference internal" href="../pairing_instructions/">Pairing your HDK</a>
                     </li>
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Optical Calibration</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#calibrate-with-one-generation-1-basestation">Calibrate with one Generation 1 Basestation:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calibrate-with-one-generation-2-basestation">Calibrate with  one Generation 2 Basestation:</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#calibrate-a-device-with-some-no-hits-sensors">Calibrate a device with some (no hits) Sensors</a>
+    </li>
+    </ul>
                     </li>
                     <li class="toctree-l1"><a class="reference internal" href="../imu_calibration/">IMU Calibration</a>
                     </li>
@@ -96,7 +104,23 @@
           <div role="main">
             <div class="section">
               
-                <p>Optical Calibration tutorial</p>
+                <h1 id="optical-calibration-tutorial">Optical Calibration tutorial</h1>
+<h2 id="calibrate-with-one-generation-1-basestation">Calibrate with one Generation 1 Basestation:</h2>
+<p><code>Note:</code> The Gen1 Lighthouse should be in mode "A" and no other Basestations should be in view</p>
+<p><code>Note:</code> The Device must be connected via USB for calibration</p>
+<pre><code>vrtrackingcalib.exe /bodycal ht_4p.json 800 200
+</code></pre>
+
+<h2 id="calibrate-with-one-generation-2-basestation">Calibrate with  one Generation 2 Basestation:</h2>
+<p><code>Note:</code> The Device must be connected via USB for calibration</p>
+<pre><code>vrtrackingcalib.exe /usedisambiguation synconbeam /bodycal ht_4p.json 800 200
+</code></pre>
+
+<h2 id="calibrate-a-device-with-some-no-hits-sensors">Calibrate a device with some (no hits) Sensors</h2>
+<p><code>Note:</code> The Device must be connected via USB for calibration</p>
+<p><code>Note:</code> This is not recommended for production and should only be used in prototypes where the defective sensor can not be repaired - Tracking Performance may suffer!</p>
+<pre><code>vrtrackingcalib.exe /deletemissingsensors /usedisambiguation synconbeam /bodycal ht_4p.json 800 200
+</code></pre>
               
             </div>
           </div>
