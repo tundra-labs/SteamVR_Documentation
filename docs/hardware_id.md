@@ -67,7 +67,7 @@ lighthouse_watchman_update.exe -aw3
 
 The following is an example output of this command with the Hardware ID highlighted:
 
-![image-20200330170528469](images/Untitled.assets/image-20200330170528469.png)
+![image-20200330170528469](images/hardware_id.assets/image-20200330170528469.png)
 
 ## Changing the Hardware ID
 
