@@ -2,8 +2,8 @@ site_name: SteamVR Documentation
 theme: readthedocs
 
 nav:
+  - Home: 'index.md'
   - 'HDK Tutorials':
     - 'Pairing your HDK': 'pairing_instructions.md'
     - 'Optical Calibration': 'optical_calibration.md'
-    - 'Bootloader': 'bootloader.md'
-    - Home: 'index.md'
+    - 'IMU Calibration': 'imu_calibration.md'
