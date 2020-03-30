@@ -3,6 +3,13 @@ theme: readthedocs
 
 nav:
   - Home: 'index.md'
+  - 'Design Guides':
+    - 'Get Access to the SteamVR HDK': 'steamvr_license_setup.md'
+    - "Valve's SteamVR Tracking Documentation": 'valve_steamvr_documentation.md'
+    - 'Design Goals': 'tracked_device_design_goals.md'
+    - "Valve's HMD Designer GUI": 'hmd_designer.md'
+    - "JSON generation in Fusion360": 'fusion360_json.md'
+    - "Physical Prototyping": 'prototyping.md'
   - 'HDK Tutorials':
     - 'Pairing your HDK': 'pairing_instructions.md'
     - 'Optical Calibration': 'optical_calibration.md'
